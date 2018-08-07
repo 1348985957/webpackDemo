@@ -1,0 +1,62 @@
+﻿1、首先安装node.js  版本号：10.7.0
+2、导入vue.js文件
+3、安装webpack  版本：3.6.0
+npm install -g webpack
+npm install 安装package.json里的包
+4、初始化项目
+npm init
+5、开发版本：(会生成依赖包文件)
+npm install --save-dev webpack
+6、webpack.config.js设置服务
+安装服务
+npm install webpack-dev-server --save-dev
+package.json配置服务
+启动服务
+npm run server
+7、安装loader
+npm install style-loader --save-dev
+npm install css-loader --save-dev
+配置loader
+8、压缩js代码 (开发环境不能压缩,生产环境压缩)
+引入uglifyjs-webpack-plugin
+9、打包html文件
+引入html-webpack-plugin
+10、分离img标签里的image图片
+npm install --save-dev html-withimg-loader
+11、分离css
+引入mini-css-extract-plugin
+12、安装less
+npm install --save-dev less
+npm install --save-dev less-loader
+13、安装sass
+npm install --save-dev node-sass sass-loader
+14、自动添加css前缀
+npm install --save-dev postcss-loader autoprefixer
+15、去除未使用css代码
+npm i -D purifycss-webpack purify-css
+16、安装babel （将es代码转换为js、react的jsx转换）
+npm i -D babel-core babel-loader babel-preset-env babel-preset-react
+17、配置调试工具
+source-map 独立的map文件  行 列
+cheap-moudle-source-map 独立的map文件 行 不包括列
+eval-source-map 开发阶段 上线 行 列
+cheap-moudle-eval-source-map 行 不包括列
+18、配置文件的模块化
+module.exports
+19、引用第三方类库
+(1)import直接引用
+(2)webpack.ProvidePlugin
+20、自动打包
+webpack --watch
+21、添加注释
+webpack.BannerPlugin插件
+22、webpack优化黑技能
+抽离第三方类库：optimization:{
+    splitChunks:{
+
+    }
+}
+23、静态资源集中输出
+npm install --save-dev copy-webpack-plugin
+24、热更新
+new webpack.HotModuleReplacementPlugin()
